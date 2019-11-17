@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\bubble.9.png" />
+    <None Remove="Resources\image%402x.png" />
+    <None Remove="Resources\image%403x.png" />
+    <None Remove="Resources\image.png" />
+    <None Remove="Resources\redribbon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\bubble.9.png" />
+    <EmbeddedResource Include="Resources\image.png" />
+    <EmbeddedResource Include="Resources\image@2x.png" />
+    <EmbeddedResource Include="Resources\image@3x.png" />
+    <EmbeddedResource Include="Resources\redribbon.png" />
+  </ItemGroup>
+</Project>
