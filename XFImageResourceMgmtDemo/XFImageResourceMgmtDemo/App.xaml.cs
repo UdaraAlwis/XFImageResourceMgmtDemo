@@ -1,6 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace XFImageResourceMgmtDemo
 {
@@ -8,9 +6,92 @@ namespace XFImageResourceMgmtDemo
     {
         public App()
         {
-            InitializeComponent();
+            // The root page of your application
+            MainPage = new ContentPage
+            {
+                Content =
+                new ScrollView()
+                {
+                    Content =
+                    new StackLayout
+                    {
+                        VerticalOptions = LayoutOptions.Center,
+                        Children = {
+                        
+                        
+                            // multi-resolution handling
 
-            MainPage = new MainPage();
+                            new Label {
+                                Text = "Xamarin.Forms.Image with Xamarin.Forms.ImageSource",
+                                FontSize = 18,
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                            },
+                            new Image
+                            {
+                                Source = Forms9Patch.ImageSource.FromResource("MyDemoApp.Resources.image.png")
+                            },
+
+
+                            new Label {
+                                Text = "Forms9Patch.Image with Forms9Patch.ImageSource",
+                                FontSize = 18,
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                            },
+                            new Forms9Patch.Image
+                            {
+                                Source = Forms9Patch.ImageSource.FromMultiResource("MyDemoApp.Resources.image") ,
+                            },
+
+
+
+                        
+                            // image stretch-ability - CapInsets
+
+                            new Label () {
+                                Text = "Xamarin Image",FontSize = 18,
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                            },
+                            new Xamarin.Forms.Image ()
+                            {
+                                Aspect = Aspect.Fill,
+                                Source = ImageSource.FromResource("MyDemoApp.Resources.redribbon.png"),
+                            },
+
+
+
+                            new Label () {
+                                Text = "Forms9Patch Image w/ CapInsets",FontSize = 18,
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                            },
+                            new Forms9Patch.Image ()
+                            {
+                                Fill = Forms9Patch.Fill.Fill,
+                                Source = Forms9Patch.ImageSource.FromResource("MyDemoApp.Resources.redribbon.png"),
+                                CapInsets = new Thickness(23, 0, 110, 0),
+                            },
+
+                        
+                            // image stretch-ability - CapInsets
+                        
+                            new Label () {
+                                Text = "Forms9Path NinePatch Image",
+                                FontSize = 18,
+                                HorizontalTextAlignment = TextAlignment.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                            },
+                            new Forms9Patch.Image () {
+                                Source = Forms9Patch.ImageSource.FromMultiResource("MyDemoApp.Resources.bubble.9.png"),
+                                HeightRequest = 110,
+                            },
+
+                        }
+                    }
+                }
+            };
         }
 
         protected override void OnStart()
