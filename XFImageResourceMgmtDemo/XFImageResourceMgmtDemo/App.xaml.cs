@@ -1,4 +1,13 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Forms9Patch;
+using Xamarin.Forms;
+using Image = Xamarin.Forms.Image;
+using ImageSource = Xamarin.Forms.ImageSource;
+using Label = Xamarin.Forms.Label;
+using StackLayout = Xamarin.Forms.StackLayout;
 
 namespace XFImageResourceMgmtDemo
 {
@@ -13,83 +22,83 @@ namespace XFImageResourceMgmtDemo
                 new ScrollView()
                 {
                     Content =
-                    new StackLayout
-                    {
-                        VerticalOptions = LayoutOptions.Center,
-                        Children = {
+                new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.Center,
+                    Children = {
                         
                         
-                            // multi-resolution handling
+                        // multi-resolution handling
 
-                            new Label {
-                                Text = "Xamarin.Forms.Image with Xamarin.Forms.ImageSource",
-                                FontSize = 18,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                            },
-                            new Image
-                            {
-                                Source = Forms9Patch.ImageSource.FromResource("MyDemoApp.Resources.image.png")
-                            },
+                        new Label {
+                            Text = "Xamarin.Forms.Image with Xamarin.Forms.ImageSource",
+                            FontSize = 18,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        },
+                        new Image
+                        {
+                            Source = ImageSource.FromResource("XFImageResourceMgmtDemo.Resources.image.png")
+                        },
 
 
-                            new Label {
-                                Text = "Forms9Patch.Image with Forms9Patch.ImageSource",
-                                FontSize = 18,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                            },
-                            new Forms9Patch.Image
-                            {
-                                Source = Forms9Patch.ImageSource.FromMultiResource("MyDemoApp.Resources.image") ,
-                            },
+                        new Label {
+                            Text = "Forms9Patch.Image with Forms9Patch.ImageSource",
+                            FontSize = 18,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        },
+                        new Forms9Patch.Image
+                        {
+                            Source = Forms9Patch.ImageSource.FromMultiResource("XFImageResourceMgmtDemo.Resources.image") ,
+                        },
 
 
 
                         
-                            // image stretch-ability - CapInsets
+                        // image stretch-ability - CapInsets
 
-                            new Label () {
-                                Text = "Xamarin Image",FontSize = 18,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                            },
-                            new Xamarin.Forms.Image ()
-                            {
-                                Aspect = Aspect.Fill,
-                                Source = ImageSource.FromResource("MyDemoApp.Resources.redribbon.png"),
-                            },
+                        new Label () {
+                            Text = "Xamarin Image",FontSize = 18,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        },
+                        new Xamarin.Forms.Image ()
+                        {
+                            Aspect = Aspect.Fill,
+                            Source = ImageSource.FromResource("XFImageResourceMgmtDemo.Resources.redribbon.png"),
+                        },
 
 
 
-                            new Label () {
-                                Text = "Forms9Patch Image w/ CapInsets",FontSize = 18,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                            },
-                            new Forms9Patch.Image ()
-                            {
-                                Fill = Forms9Patch.Fill.Fill,
-                                Source = Forms9Patch.ImageSource.FromResource("MyDemoApp.Resources.redribbon.png"),
-                                CapInsets = new Thickness(23, 0, 110, 0),
-                            },
+                        new Label () {
+                            Text = "Forms9Patch Image w/ CapInsets",FontSize = 18,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        },
+                        new Forms9Patch.Image ()
+                        {
+                            Fill = Fill.Fill,
+                            Source = ImageSource.FromResource("XFImageResourceMgmtDemo.Resources.redribbon.png"),
+                            CapInsets = new Thickness(23, 0, 110, 0),
+                        },
 
                         
-                            // image stretch-ability - CapInsets
+                        // image stretch-ability - CapInsets
                         
-                            new Label () {
-                                Text = "Forms9Path NinePatch Image",
-                                FontSize = 18,
-                                HorizontalTextAlignment = TextAlignment.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                            },
-                            new Forms9Patch.Image () {
-                                Source = Forms9Patch.ImageSource.FromMultiResource("MyDemoApp.Resources.bubble.9.png"),
-                                HeightRequest = 110,
-                            },
+                        new Label () {
+                            Text = "Forms9Path NinePatch Image",
+                            FontSize = 18,
+                            HorizontalTextAlignment = TextAlignment.Center,
+                            HorizontalOptions = LayoutOptions.Center,
+                        },
+                        new Forms9Patch.Image () {
+                            Source = Forms9Patch.ImageSource.FromMultiResource("XFImageResourceMgmtDemo.Resources.bubble.9.png"),
+                            HeightRequest = 110,
+                        },
 
-                        }
                     }
+                }
                 }
             };
         }
