@@ -1,5 +1,7 @@
-TechTalk: Cross Platform Image Resources Management in Xamarin Forms!
+XFImageResourceMgmtDemo
 ==============
+
+TechTalk: Cross Platform Image Resources Management in Xamarin Forms!
 
 This is the live demo code of my tech talk at Singapore Mobile .Net Developers, Singapore
 
