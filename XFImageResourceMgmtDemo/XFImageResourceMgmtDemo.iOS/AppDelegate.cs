@@ -23,6 +23,8 @@ namespace XFImageResourceMgmtDemo.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Forms9Patch.iOS.Settings.Initialize(this);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
